@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slides sobre Criptografia, RSA e DSA</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #2d2d2d; 
+        color: #f0f0f0; 
+        padding: 20px;
+    }
+    .slide {
+        background-color: #1a1a1a; 
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+    }
+    .slide h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #b38cff; 
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.8); 
+    }
+    .slide-content {
+        margin-bottom: 20px;
+    }
+    .slide-content p {
+        font-size: 18px;
+        color: #f0f0f0; 
+    }
+    .slide-content ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        color: #f0f0f0; 
+    }
+    .slide-content li {
+        font-size: 18px;
+        color: #f0f0f0; 
+    }
+    .image-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .image-container img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3); 
+    }
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .comparison-table th, .comparison-table td {
+        border: 1px solid #333;
+        padding: 15px;
+        text-align: center;
+        color: #f0f0f0; 
+    }
+    .comparison-table th {
+        background-color: #4b4b4b; /
+    }
+</style>
+</head>
+<body>
+
+<div class="slide">
+    <h1>Introdução e Conceitos Básicos</h1>
+    <div class="slide-content">
+        <p><strong>O que é criptografia?</strong><br>
+        Criptografia é a prática de proteger informações transformando-as em um formato ilegível para aqueles que não possuem a chave de descriptografia correta.</p>
+        
+        <p><strong>Diferença entre chave pública e privada:</strong></p>
+        <ul>
+            <li><strong>Chave Pública:</strong> Usada para criptografar dados. Pode ser distribuída livremente.</li>
+            <li><strong>Chave Privada:</strong> Usada para descriptografar dados. Deve ser mantida em segredo.</li>
+        </ul>
+        
+        <p><strong>Importância na segurança da informação:</strong><br>
+        Protege dados sensíveis contra acessos não autorizados. Garante a integridade e autenticidade da informação.</p>
+    </div>
+    <div class="image-container">
+        <img src="diagrama-criptografia.png" alt="Diagrama de Criptografia">
+    </div>
+</div>
+
+<div class="slide">
+    <h1>RSA: História e Princípio</h1>
+    <div class="slide-content">
+        <p><strong>Criado por:</strong> Ron Rivest, Adi Shamir, Leonard Adleman.</p>
+        <p><strong>Baseia-se em:</strong> Fatoração de grandes números primos.</p>
+    </div>
+    <div class="image-container">
+        <img src="foto-criadores-rsa.jfif" alt="Fotos dos criadores do RSA">
+    </div>
+</div>
+
+<div class="slide">
+    <h1>RSA: Funcionamento e Aplicações</h1>
+    <div class="slide-content">
+        <p><strong>Geração de chaves pública e privada:</strong><br>
+        Passos: Escolha de dois números primos grandes, cálculo do produto e expoentes, geração das chaves.</p>
+        
+        <p><strong>Usos:</strong><br>
+        Segurança de e-mails, HTTPS, autenticação.</p>
+    </div>
+    <div class="image-container">
+        <img src="fluxo-criptografia-rsa.png" alt="Fluxo de Criptografia RSA">
+    </div>
+</div>
+
+<div class="slide">
+    <h1>DSA: História e Princípio</h1>
+    <div class="slide-content">
+        <p><strong>Desenvolvido por:</strong> David Kravitz para a NSA.</p>
+        <p><strong>Baseia-se em:</strong> Logaritmos discretos.</p>
+    </div>
+    <div class="image-container">
+        <img src="foto-david-kravitz.jfif" alt="Foto de David Kravitz">
+    </div>
+</div>
+
+<div class="slide">
+    <h1>DSA: Funcionamento e Aplicações</h1>
+    <div class="slide-content">
+        <p><strong>Geração de chaves pública e privada:</strong><br>
+        Passos: Escolha de parâmetros do grupo, geração das chaves.</p>
+        
+        <p><strong>Usos:</strong><br>
+        Assinaturas digitais, transações seguras, certificados.</p>
+    </div>
+    <div class="image-container">
+        <img src="diagrama-assinaturas-dsa.jpg" alt="Diagrama de Assinaturas Digitais DSA">
+    </div>
+</div>
+
+<div class="slide">
+    <h1>Exemplo de RSA em Python</h1>
+    <div class="image-container">
+        <img src="rsa.jfif" alt="RSA em Python">
+    </div>
+    <div class="slide-content">
+        <p><strong>Explicação:</strong><br>
+            <p><strong>Geração de chaves;</strong><br>
+            rsa.generate_private_key() é usado para gerar uma chave privada RSA com um tamanho de 2048 bits e um expoente público de 65537.
+            <p><strong>Criptografia;</strong><br>
+            public_key.encrypt() criptografa a mensagem usando a chave pública RSA.
+            <p><strong>Descriptografia;</strong><br>
+            private_key.decrypt() descriptografa a mensagem usando a chave privada RSA.</p>
+        
+    </div>
+</div>
+
+<div class="slide">
+    <h1>Exemplo de DSA em Python</h1>
+    <div class="image-container">
+        <img src="dsa.jfif" alt="DSA em Python">
+    </div>
+    <div class="slide-content">
+        <p><strong>Explicação:</strong><br>
+            <p><strong>Geração de chaves;</strong><br>
+            dsa.generate_private_key() é usado para gerar uma chave privada DSA com um tamanho de 1024 bits.
+            <p><strong>Assinatura;</strong><br>
+            private_key.sign() assina a mensagem usando a chave privada DSA e a função de hash SHA-256.
+            <p><strong>Verificação;</strong><br>
+            public_key.verify() verifica a assinatura usando a chave pública DSA e a função de hash SHA-256.</p>
+        
+    </div>
+</div>
+
+<div class="slide">
+    <h1>Comparação e Conclusão</h1>
+    <div class="slide-content">
+        <p><strong>Comparação:</strong><br>
+        Segurança: RSA e DSA dependem de diferentes problemas matemáticos.<br>
+        Desempenho: RSA é geralmente mais lento na assinatura e rápido na verificação, enquanto o DSA é mais equilibrado.<br>
+        Uso: RSA é mais comum em criptografia geral, DSA é especializado em assinaturas.</p>
+        
+        <p><strong>Importância de RSA e DSA:</strong><br>
+        Ambos são fundamentais para a segurança da informação moderna, oferecendo soluções robustas para criptografia e assinaturas digitais.</p>
+    </div>
+    <div class="image-container">
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Aspecto</th>
+                    <th>RSA</th>
+                    <th>DSA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Segurança</td>
+                    <td>Método de fatoração de números</td>
+                    <td>Logaritmos discretos</td>
+                </tr>
+                <tr>
+                    <td>Desempenho</td>
+                    <td>Varia em operações de assinatura e verificação</td>
+                    <td>Mais equilibrado em operações de assinatura</td>
+                </tr>
+                <tr>
+                    <td>Uso</td>
+                    <td>Criptografia geral</td>
+                    <td>Especializado em assinaturas digitais</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
